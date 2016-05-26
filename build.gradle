@@ -1,0 +1,36 @@
+group 'cn.xrsz'
+version '1.0'
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'war'
+
+sourceCompatibility = 1.8
+
+idea {
+    module {
+        downloadJavadoc = false
+        downloadSources = false
+    }
+}
+
+repositories {
+    maven { url "https://repo.spring.io/libs-release" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    maven { url "http://maven.oschina.net/content/groups/public/" }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    providedCompile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'org.springframework:spring-webmvc:4.2.6.RELEASE',
+            'org.springframework:spring-context-support:4.2.6.RELEASE',
+            'org.mybatis:mybatis:3.4.1-SNAPSHOT',
+            'org.mybatis:mybatis-spring:1.3.1-SNAPSHOT',
+            'org.freemarker:freemarker:2.3.24-incubating',
+            'commons-beanutils:commons-beanutils:1.9.2',
+            'org.ehcache:ehcache:3.0.1',
+            'dom4j:dom4j:1.6.1'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+}
