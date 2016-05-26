@@ -22,7 +22,7 @@
 	<setting name="watermarkImage" value="/upload/image/watermark.png" />
 	<setting name="watermarkPosition" value="bottomRight" />
 	<setting name="locale" value="zh_CN" />
-	<setting name="theme" value="ckc" />
+	<setting name="theme" value="default" />
 
 	<templateConfig id="commonJs" templatePath="/js/common.ftl" staticPath="/resources/js/common.js" />
 	<templateConfig id="adminCommonJs" templatePath="/js/admin.ftl" staticPath="/resources/js/admin.js" />
