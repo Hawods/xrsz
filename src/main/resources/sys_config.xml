@@ -20,11 +20,20 @@
 	<setting name="defaultThumbnailProductImage" value="/upload/image/default_thumbnail.jpg" />
 	<setting name="watermarkAlpha" value="50" />
 	<setting name="watermarkImage" value="/upload/image/watermark.png" />
-	<setting name="watermarkPosition" value="bottomRight" />
+	<setting name="uploadMaxSize" value="10" />
+	<setting name="uploadImageExtension" value="jpg,jpeg,bmp,gif,png" />
+	<setting name="uploadMediaExtension" value="swf,flv,mp3,wav,avi,rm,rmvb" />
+	<setting name="uploadFileExtension" value="zip,rar,7z,doc,docx,xls,xlsx,ppt,pptx" />
+	<setting name="imageUploadPath" value="/upload/image/${.now?string('yyyyMM')}/" />
+	<setting name="mediaUploadPath" value="/upload/media/${.now?string('yyyyMM')}/" />
+	<setting name="fileUploadPath" value="/upload/file/${.now?string('yyyyMM')}/" />
+	<setting name="isDevelopmentEnabled" value="true" />
+	<setting name="cookiePath" value="/" />
+	<setting name="cookieDomain" value="" />
 	<setting name="locale" value="zh_CN" />
 	<setting name="theme" value="default" />
 
-	<templateConfig id="commonJs" templatePath="/js/common.ftl" staticPath="/resources/js/common.js" />
+	<templateConfig id="commonJs" templatePath="/js/common.ftl" staticPath="/resources/js/main/${theme}/common.js" />
 	<templateConfig id="adminCommonJs" templatePath="/js/admin.ftl" staticPath="/resources/js/admin.js" />
 	<templateConfig id="sitemapIndex" templatePath="/main/${theme}/xml/sitemap_index.ftl" staticPath="/sitemap/index.xml" />
 	<templateConfig id="sitemap" templatePath="/main/${theme}/xml/sitemap.ftl" staticPath="/sitemap/${index}.xml" />

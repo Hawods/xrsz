@@ -10,8 +10,6 @@
 	<title>${message("shop.index.title")}</title>
 	<meta name="author" content="Hawods" />
 	<meta name="copyright" content="Hawods" />
-	<meta name="keywords" content="[@seo.keywords?interpret /]" />
-	<meta name="description" content="[@seo.description?interpret /]" />
 	<link href="${base}/favicon.ico" rel="icon" type="image/x-icon" />
 
     <!-- bootstrap core css -->

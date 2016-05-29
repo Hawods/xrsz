@@ -8,27 +8,25 @@
 	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<title>${message("shop.error.title")}</title>
-	<meta name="author" content="Movitech Team" />
-	<meta name="copyright" content="Movitech" />
+	<meta name="author" content="Hawods" />
+	<meta name="copyright" content="Hawods" />
 
 	<!-- bootstrap core css -->
-	<link href="${base}/resources/shop/${theme}/css/bootstrap.min.css" rel="stylesheet">
+	<link href="${base}/resources/css/bootstrap.min.css" rel="stylesheet">
 	<!-- custom styles for this template -->
-	<link href="${base}/resources/shop/${theme}/css/common.css" rel="stylesheet" type="text/css" />
-	<link href="${base}/resources/shop/${theme}/css/error.css" rel="stylesheet" type="text/css" />
+	<link href="${base}/resources/main/${theme}/css/common.css" rel="stylesheet" type="text/css" />
+	<link href="${base}/resources/main/${theme}/css/error.css" rel="stylesheet" type="text/css" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-	<script src="${base}/resources/shop/${theme}/js/html5shiv.min.js"></script>
-	<script src="${base}/resources/shop/${theme}/js/respond.min.js"></script>
+	<script src="${base}/resources/js/html5shiv.min.js"></script>
+	<script src="${base}/resources/js/respond.min.js"></script>
 	<![endif]-->
 
-	<script type="text/javascript" src="${base}/resources/shop/${theme}/js/jquery-1.11.3.js"></script>
-	<script type="text/javascript" src="${base}/resources/shop/${theme}/js/bootstrap.js"></script>
-	<script type="text/javascript" src="${base}/resources/shop/${theme}/js/common.js"></script>
+	<script type="text/javascript" src="${base}/resources/main/${theme}/js/common.js"></script>
 </head>
 <body>
-	[#include "/shop/${theme}/include/header.ftl" /]
+	[#include "/main/${theme}/include/header.ftl" /]
 	<div class="container error">
 		<div class="row">
 			<div class="main">
@@ -40,11 +38,6 @@
 					[#if exception?? && exception.message?has_content]
 						<dd>${exception.message}</dd>
 					[/#if]
-					[#if constraintViolations?has_content]
-						[#list constraintViolations as constraintViolation]
-							<dd>[${constraintViolation.propertyPath}] ${constraintViolation.message}</dd>
-						[/#list]
-					[/#if]
 					<dd>
 						<a href="javascript:;" onclick="history.back(); return false;">&gt;&gt; ${message("shop.error.back")} &lt;&lt;</a>
 					</dd>
@@ -55,7 +48,9 @@
 			</div>
 		</div>
 	</div>
-	[#include "/shop/${theme}/include/footer.ftl" /]
+	[#include "/main/${theme}/include/footer.ftl" /]
+    <script type="text/javascript" src="${base}/resources/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="${base}/resources/js/bootstrap.js"></script>
 </body>
 </html>
 [/#escape]
