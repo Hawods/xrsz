@@ -15,11 +15,18 @@ idea {
 }
 
 repositories {
-    maven { url "http://maven.oschina.net/content/groups/public/" }
+//    localRepository {
+//        dirs 'lib'
+//    }
+//    maven { url "http://maven.oschina.net/content/groups/public/" }
     maven { url "https://repo.spring.io/libs-release" }
     maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
     mavenLocal()
     mavenCentral()
+}
+
+configurations {
+    all*.exclude group: 'commons-logging'
 }
 
 dependencies {
@@ -37,7 +44,11 @@ dependencies {
             'org.ehcache:ehcache:3.0.1',
             'dom4j:dom4j:1.6.1',
             'jaxen:jaxen:1.1.6',
+            'org.slf4j:slf4j-api:1.7.21',
+            'org.slf4j:jcl-over-slf4j:1.7.21',
             'org.apache.logging.log4j:log4j-api:2.6',
-            'org.apache.logging.log4j:log4j-core:2.6'
+            'org.apache.logging.log4j:log4j-core:2.6',
+            'org.apache.logging.log4j:log4j-slf4j-impl:2.6'
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    runtime group: 'org.apache.logging.log4j', name: 'log4j-web', version: '2.6'
 }
