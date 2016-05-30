@@ -37,7 +37,5 @@
 	<templateConfig id="adminCommonJs" templatePath="/js/admin.ftl" staticPath="/resources/js/admin.js" />
 	<templateConfig id="sitemapIndex" templatePath="/main/${theme}/xml/sitemap_index.ftl" staticPath="/sitemap/index.xml" />
 	<templateConfig id="sitemap" templatePath="/main/${theme}/xml/sitemap.ftl" staticPath="/sitemap/${index}.xml" />
-	<templateConfig id="header" templatePath="/main/${theme}/include/header.ftl" />
-	<templateConfig id="footer" templatePath="/main/${theme}/include/footer.ftl" />
 	<templateConfig id="index" templatePath="/main/${theme}/index.ftl" staticPath="/index.html" />
 </sys>

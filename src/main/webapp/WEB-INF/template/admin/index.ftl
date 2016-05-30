@@ -10,7 +10,7 @@
 	<title>${message("shop.index.title")}</title>
 	<meta name="author" content="Hawods" />
 	<meta name="copyright" content="Hawods" />
-	<link href="${base}/favicon.ico" rel="icon" type="image/x-icon" />
+    <link href="${base}/favicon.ico" rel="icon shortcut" />
 
     <!-- bootstrap core css -->
     <link href="${base}/resources/css/bootstrap.min.css" rel="stylesheet">

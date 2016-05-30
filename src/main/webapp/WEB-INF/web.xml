@@ -37,6 +37,7 @@
         <url-pattern>/static/*</url-pattern>
         <url-pattern>/resources/*</url-pattern>
         <url-pattern>/upload/*</url-pattern>
+        <url-pattern>/favicon.ico</url-pattern>
         <url-pattern>/index.html</url-pattern>
     </servlet-mapping>
 
