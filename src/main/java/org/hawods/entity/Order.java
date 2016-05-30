@@ -1,0 +1,55 @@
+package org.hawods.entity;
+
+import java.math.BigDecimal;
+import java.util.Date;
+
+/**
+ * Created by hawods on 5/30/16.
+ */
+public class Order extends BaseEntity<Long> {
+    public enum Type {
+        dish,
+        room
+    }
+
+    public enum Status {
+        
+    }
+
+    private Type type;
+    private BigDecimal price;
+    private Member member;
+    private Date scheduledTime;
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public Member getMember() {
+        return member;
+    }
+
+    public void setMember(Member member) {
+        this.member = member;
+    }
+
+    public Date getScheduledTime() {
+        return scheduledTime;
+    }
+
+    public void setScheduledTime(Date scheduledTime) {
+        this.scheduledTime = scheduledTime;
+    }
+}
