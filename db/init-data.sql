@@ -1,4 +1,1 @@
-insert into ss_seo VALUES ( 'u1',  'Pocoyo' );
-insert into ss_seo VALUES ( 'u2',  'Pato'   );
-insert into ss_seo VALUES ( 'u3',  'Eli'    );
-insert into ss_seo VALUES ( 'u4',  'Valentina'    );
+INSERT INTO ss_seo (create_date, modify_date, version, description, keywords, title, type) VALUES (now(), now(), 0, 'desc', 'keywords', 'title', 'index');
