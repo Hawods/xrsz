@@ -13,13 +13,17 @@ public class Order extends BaseEntity<Long> {
     }
 
     public enum Status {
-        
+        pendingReview,
+        completed,
+        canceled,
+        denied
     }
 
     private Type type;
     private BigDecimal price;
     private Member member;
     private Date scheduledTime;
+    private Status status;
 
     public Type getType() {
         return type;
@@ -51,5 +55,13 @@ public class Order extends BaseEntity<Long> {
 
     public void setScheduledTime(Date scheduledTime) {
         this.scheduledTime = scheduledTime;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
