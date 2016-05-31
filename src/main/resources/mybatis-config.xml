@@ -21,4 +21,8 @@
         <setting name="lazyLoadTriggerMethods" value="equals,clone,hashCode,toString"/>
         <!--<setting name="logImpl" value="LOG4J2"/>-->
     </settings>
+
+    <typeHandlers>
+        <package name="org.hawods.handler"/>
+    </typeHandlers>
 </configuration>

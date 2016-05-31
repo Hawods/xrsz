@@ -40,23 +40,11 @@ public class Setting implements Serializable {
 
     private String siteCloseMessage;
 
-    private Integer largeProductImageWidth;
+    private Integer thumbnailImageWidth;
 
-    private Integer largeProductImageHeight;
+    private Integer thumbnailImageHeight;
 
-    private Integer mediumProductImageWidth;
-
-    private Integer mediumProductImageHeight;
-
-    private Integer thumbnailProductImageWidth;
-
-    private Integer thumbnailProductImageHeight;
-
-    private String defaultLargeProductImage;
-
-    private String defaultMediumProductImage;
-
-    private String defaultThumbnailProductImage;
+    private String defaultThumbnailImage;
 
     private Integer watermarkAlpha;
 
@@ -158,76 +146,28 @@ public class Setting implements Serializable {
         this.siteCloseMessage = siteCloseMessage;
     }
 
-    public Integer getLargeProductImageWidth() {
-        return largeProductImageWidth;
+    public Integer getThumbnailImageWidth() {
+        return thumbnailImageWidth;
     }
 
-    public void setLargeProductImageWidth(Integer largeProductImageWidth) {
-        this.largeProductImageWidth = largeProductImageWidth;
+    public void setThumbnailImageWidth(Integer thumbnailImageWidth) {
+        this.thumbnailImageWidth = thumbnailImageWidth;
     }
 
-    public Integer getLargeProductImageHeight() {
-        return largeProductImageHeight;
+    public String getDefaultThumbnailImage() {
+        return defaultThumbnailImage;
     }
 
-    public void setLargeProductImageHeight(Integer largeProductImageHeight) {
-        this.largeProductImageHeight = largeProductImageHeight;
+    public void setDefaultThumbnailImage(String defaultThumbnailImage) {
+        this.defaultThumbnailImage = defaultThumbnailImage;
     }
 
-    public Integer getMediumProductImageWidth() {
-        return mediumProductImageWidth;
+    public Integer getThumbnailImageHeight() {
+        return thumbnailImageHeight;
     }
 
-    public void setMediumProductImageWidth(Integer mediumProductImageWidth) {
-        this.mediumProductImageWidth = mediumProductImageWidth;
-    }
-
-    public Integer getMediumProductImageHeight() {
-        return mediumProductImageHeight;
-    }
-
-    public void setMediumProductImageHeight(Integer mediumProductImageHeight) {
-        this.mediumProductImageHeight = mediumProductImageHeight;
-    }
-
-    public Integer getThumbnailProductImageWidth() {
-        return thumbnailProductImageWidth;
-    }
-
-    public void setThumbnailProductImageWidth(Integer thumbnailProductImageWidth) {
-        this.thumbnailProductImageWidth = thumbnailProductImageWidth;
-    }
-
-    public Integer getThumbnailProductImageHeight() {
-        return thumbnailProductImageHeight;
-    }
-
-    public void setThumbnailProductImageHeight(Integer thumbnailProductImageHeight) {
-        this.thumbnailProductImageHeight = thumbnailProductImageHeight;
-    }
-
-    public String getDefaultLargeProductImage() {
-        return defaultLargeProductImage;
-    }
-
-    public void setDefaultLargeProductImage(String defaultLargeProductImage) {
-        this.defaultLargeProductImage = defaultLargeProductImage;
-    }
-
-    public String getDefaultMediumProductImage() {
-        return defaultMediumProductImage;
-    }
-
-    public void setDefaultMediumProductImage(String defaultMediumProductImage) {
-        this.defaultMediumProductImage = defaultMediumProductImage;
-    }
-
-    public String getDefaultThumbnailProductImage() {
-        return defaultThumbnailProductImage;
-    }
-
-    public void setDefaultThumbnailProductImage(String defaultThumbnailProductImage) {
-        this.defaultThumbnailProductImage = defaultThumbnailProductImage;
+    public void setThumbnailImageHeight(Integer thumbnailImageHeight) {
+        this.thumbnailImageHeight = thumbnailImageHeight;
     }
 
     public Integer getWatermarkAlpha() {

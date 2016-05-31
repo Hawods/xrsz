@@ -1,12 +1,15 @@
 package org.hawods.entity;
 
+import java.math.BigDecimal;
+
 /**
  * Created by hawods on 5/30/16.
  */
-public class OrderItem extends BaseEntity<Long> {
+public class DishOrderItem extends BaseEntity<Long> {
     private Order order;
-    private Room room;
     private Dish dish;
+    private String name;
+    private BigDecimal price;
     private Integer quantity;
 
     public Order getOrder() {
@@ -17,20 +20,28 @@ public class OrderItem extends BaseEntity<Long> {
         this.order = order;
     }
 
-    public Room getRoom() {
-        return room;
-    }
-
-    public void setRoom(Room room) {
-        this.room = room;
-    }
-
     public Dish getDish() {
         return dish;
     }
 
     public void setDish(Dish dish) {
         this.dish = dish;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
     }
 
     public Integer getQuantity() {

@@ -14,6 +14,7 @@ public class Dish extends BaseEntity<Long> {
     private Boolean isMarketable;
     private Boolean isTop;
     private Integer sales;
+    private String[] images;
 
     public String getName() {
         return name;
@@ -77,5 +78,13 @@ public class Dish extends BaseEntity<Long> {
 
     public void setSales(Integer sales) {
         this.sales = sales;
+    }
+
+    public String[] getImages() {
+        return images;
+    }
+
+    public void setImages(String[] images) {
+        this.images = images;
     }
 }
