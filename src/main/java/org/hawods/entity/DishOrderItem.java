@@ -1,24 +1,14 @@
 package org.hawods.entity;
 
-import java.math.BigDecimal;
+import org.hawods.entity.base.OrderItem;
 
 /**
  * Created by hawods on 5/30/16.
  */
-public class DishOrderItem extends BaseEntity<Long> {
-    private Order order;
+public class DishOrderItem extends OrderItem {
     private Dish dish;
-    private String name;
-    private BigDecimal price;
     private Integer quantity;
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
+    private Integer servedQuantity;
 
     public Dish getDish() {
         return dish;
@@ -28,27 +18,19 @@ public class DishOrderItem extends BaseEntity<Long> {
         this.dish = dish;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getPrice() {
-        return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
-    }
-
     public Integer getQuantity() {
         return quantity;
     }
 
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
+    }
+
+    public Integer getServedQuantity() {
+        return servedQuantity;
+    }
+
+    public void setServedQuantity(Integer servedQuantity) {
+        this.servedQuantity = servedQuantity;
     }
 }

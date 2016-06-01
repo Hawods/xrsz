@@ -1,23 +1,16 @@
 package org.hawods.entity;
 
-import java.math.BigDecimal;
+import org.hawods.entity.base.OrderItem;
+
+import java.util.Date;
 
 /**
  * Created by hawods on 5/30/16.
  */
-public class RoomOrderItem extends BaseEntity<Long> {
-    private Order order;
+public class RoomOrderItem extends OrderItem {
     private Room room;
-    private String name;
-    private BigDecimal price;
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
+    private Date startDate;
+    private Date endDate;
 
     public Room getRoom() {
         return room;
@@ -27,19 +20,19 @@ public class RoomOrderItem extends BaseEntity<Long> {
         this.room = room;
     }
 
-    public String getName() {
-        return name;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public Date getEndDate() {
+        return endDate;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setEndDate(Date endDate) {
+        this.endDate = endDate;
     }
 }

@@ -16,10 +16,7 @@ import org.ehcache.CacheManager;
 import org.ehcache.config.Configuration;
 import org.ehcache.config.builders.CacheManagerBuilder;
 import org.ehcache.xml.XmlConfiguration;
-import org.hawods.CommonAttributes;
-import org.hawods.EnumConverter;
-import org.hawods.Setting;
-import org.hawods.TemplateConfig;
+import org.hawods.*;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.util.Assert;
 
@@ -108,7 +105,6 @@ public final class SystemUtils {
     private SystemUtils() {
     }
 
-    @SuppressWarnings("unchecked")
     public static Setting getSetting() {
         Cache<String, Setting> cache = CACHE_MANAGER.getCache(Setting.CACHE_NAME, String.class, Setting.class);
         Setting setting = cache.get(Setting.CACHE_NAME);
@@ -139,7 +135,6 @@ public final class SystemUtils {
         return setting;
     }
 
-    @SuppressWarnings("unchecked")
     public static void setSetting(Setting setting) {
         Assert.notNull(setting);
 
@@ -195,6 +190,35 @@ public final class SystemUtils {
         }
     }
 
+    public static List<LogConfig> getLogConfigs() {
+        Cache<String, Object> cache = CACHE_MANAGER.getCache(LogConfig.CACHE_NAME, String.class, Object.class);
+        String cacheKey = "logConfigs";
+        List<LogConfig> logConfigs = (List<LogConfig>) cache.get(cacheKey);
+        if (logConfigs == null) {
+            logConfigs = new ArrayList<LogConfig>();
+            try {
+                File sysConfigXml = new ClassPathResource(CommonAttributes.SYS_CONFIG_XML_PATH).getFile();
+                Document document = new SAXReader().read(sysConfigXml);
+                List<org.dom4j.Element> elements = document.selectNodes("/sys/logConfig");
+                for (org.dom4j.Element element : elements) {
+                    String operation = element.attributeValue("operation");
+                    String urlPattern = element.attributeValue("urlPattern");
+
+                    LogConfig logConfig = new LogConfig();
+                    logConfig.setOperation(operation);
+                    logConfig.setUrlPattern(urlPattern);
+                    logConfigs.add(logConfig);
+                }
+            } catch (IOException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            } catch (DocumentException e) {
+                throw new RuntimeException(e.getMessage(), e);
+            }
+            cache.put(cacheKey, logConfigs);
+        }
+        return logConfigs;
+    }
+
     public static TemplateConfig getTemplateConfig(String id) {
         Assert.hasText(id);
 
@@ -219,7 +243,6 @@ public final class SystemUtils {
         return templateConfig;
     }
 
-    @SuppressWarnings("unchecked")
     public static List<TemplateConfig> getTemplateConfigs() {
         Cache<String, Object> cache = CACHE_MANAGER.getCache(TemplateConfig.CACHE_NAME, String.class, Object.class);
         String cacheKey = "templateConfigs";

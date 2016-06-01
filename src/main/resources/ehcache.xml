@@ -26,5 +26,8 @@
     <ehcache:cache alias="templateConfig" uses-template="defaultTemplate">
         <ehcache:value-type>java.lang.Object</ehcache:value-type>
     </ehcache:cache>
+    <ehcache:cache alias="logConfig" uses-template="defaultTemplate">
+        <ehcache:value-type>java.lang.Object</ehcache:value-type>
+    </ehcache:cache>
 
 </ehcache:config>

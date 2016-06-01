@@ -1,4 +1,4 @@
-package org.hawods.entity;
+package org.hawods.entity.base;
 
 import java.io.Serializable;
 import java.util.Date;

@@ -1,4 +1,7 @@
-package org.hawods.entity;
+package org.hawods.entity.base;
+
+import org.hawods.entity.Member;
+import org.hawods.entity.base.BaseEntity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -8,7 +11,9 @@ import java.util.Date;
  */
 public class Order extends BaseEntity<Long> {
     public enum Status {
+        pendingPayment,
         pendingReview,
+        accepted,
         completed,
         canceled,
         denied
@@ -18,6 +23,7 @@ public class Order extends BaseEntity<Long> {
     private Member member;
     private Date scheduledTime;
     private Status status;
+    private String remark;
 
     public BigDecimal getPrice() {
         return price;
@@ -49,5 +55,13 @@ public class Order extends BaseEntity<Long> {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 }

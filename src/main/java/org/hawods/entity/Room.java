@@ -1,5 +1,7 @@
 package org.hawods.entity;
 
+import org.hawods.entity.base.BaseEntity;
+
 import java.math.BigDecimal;
 
 /**
