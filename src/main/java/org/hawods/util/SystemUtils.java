@@ -201,10 +201,12 @@ public final class SystemUtils {
                 Document document = new SAXReader().read(sysConfigXml);
                 List<org.dom4j.Element> elements = document.selectNodes("/sys/logConfig");
                 for (org.dom4j.Element element : elements) {
+                    String type = element.attributeValue("type");
                     String operation = element.attributeValue("operation");
                     String urlPattern = element.attributeValue("urlPattern");
 
                     LogConfig logConfig = new LogConfig();
+                    logConfig.setType(type);
                     logConfig.setOperation(operation);
                     logConfig.setUrlPattern(urlPattern);
                     logConfigs.add(logConfig);

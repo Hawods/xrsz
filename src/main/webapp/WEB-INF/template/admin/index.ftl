@@ -27,11 +27,19 @@
 </head>
 <body>
 	<div class="container">
-		admin
+        <button id="staticBtn" class="btn btn-default">静态化</button>
 	</div>
     <script type="text/javascript" src="${base}/resources/js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="${base}/resources/js/bootstrap.min.js"></script>
     [#--<script type="text/javascript" src="${base}/resources/js/admin/common.js"></script>--]
+
+    <script type="text/javascript">
+        $("#staticBtn").on("click", function(){
+            $.post("${base}/admin/static/generate.html?generateType=index", function(message){
+                alert(JSON.stringify(message));
+            });
+        });
+    </script>
 </body>
 </html>
 [/#escape]

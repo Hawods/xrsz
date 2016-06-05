@@ -1,5 +1,6 @@
 package org.hawods.controller.admin;
 
+import com.fasterxml.jackson.databind.deser.Deserializers;
 import org.hawods.entity.Seo;
 import org.hawods.mapper.SeoMapper;
 import org.slf4j.Logger;
@@ -14,22 +15,9 @@ import javax.annotation.Resource;
  */
 @Controller("adminIndexController")
 @RequestMapping("/admin/index")
-public class IndexController {
-    private Logger logger = LoggerFactory.getLogger(this.getClass());
-
-    @Resource
-    private SeoMapper seoMapper;
-
+public class IndexController extends BaseController {
     @RequestMapping
     public String index() {
-        try {
-            Seo seo = seoMapper.selectSeo(1);
-            logger.debug(seo.getId() + ":" + seo.getType() + "|" + seo.getTitle());
-            logger.warn(seo.getId() + ":" + seo.getType() + "|" + seo.getTitle());
-            logger.error(seo.getId() + ":" + seo.getType() + "|" + seo.getTitle());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
         return "/admin/index";
     }
 }

@@ -8,24 +8,7 @@ import org.hawods.entity.base.BaseEntity;
 public class Seo extends BaseEntity<Long> {
 
 	public enum Type {
-
-		index,
-
-		articleList,
-
-		articleSearch,
-
-		articleContent,
-
-		goodsList,
-
-		goodsSearch,
-
-		goodsContent,
-
-		brandList,
-
-		brandContent
+		index
 	}
 
 	private Seo.Type type;

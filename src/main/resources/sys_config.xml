@@ -27,6 +27,9 @@
 	<setting name="locale" value="zh_CN" />
 	<setting name="theme" value="default" />
 
+	<logConfig type="admin" operation="系统设置" urlPattern="/admin/setting/update.jhtml" />
+	<logConfig type="admin" operation="添加管理员" urlPattern="/admin/admin/save.jhtml" />
+
 	<templateConfig id="commonJs" templatePath="/js/common.ftl" staticPath="/resources/js/main/${theme}/common.js" />
 	<templateConfig id="adminCommonJs" templatePath="/js/admin.ftl" staticPath="/resources/js/admin.js" />
 	<templateConfig id="sitemapIndex" templatePath="/main/${theme}/xml/sitemap_index.ftl" staticPath="/sitemap/index.xml" />

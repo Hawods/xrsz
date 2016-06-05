@@ -21,7 +21,8 @@
     <link href="${base}/favicon.ico" rel="icon shortcut" />
 
     <!-- bootstrap core css -->
-    <link href="${base}/resources/css/bootstrap.min.css" rel="stylesheet">
+    <link href="${base}/resources/css/bootstrap.css" rel="stylesheet">
+    <link href="${base}/resources/css/bootstrap-theme.css" rel="stylesheet">
     <!-- custom styles for this template -->
     <link href="${base}/resources/css/main/${theme}/common.css" rel="stylesheet" type="text/css" />
     <link href="${base}/resources/css/main/${theme}/index.css" rel="stylesheet" type="text/css" />
@@ -40,9 +41,9 @@
 	</div>
 	[#include "/main/${theme}/include/footer.ftl" /]
     <script type="text/javascript" src="${base}/resources/js/jquery-1.11.3.min.js"></script>
-    <script type="text/javascript" src="${base}/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${base}/resources/js/bootstrap.js"></script>
     <script type="text/javascript" src="${base}/resources/js/jquery.lazyload.min.js"></script>
-    <script type="text/javascript" src="${base}/resources/js/main/${theme}/common.js"></script>
+    [#--<script type="text/javascript" src="${base}/resources/js/main/${theme}/common.js"></script>--]
     <script type="text/javascript">
         $(function() {
             $("img").lazyload({

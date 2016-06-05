@@ -1,6 +1,6 @@
 package org.hawods.service;
 
-import org.hawods.entity.base.Log;
+import org.hawods.entity.Log;
 import org.hawods.service.base.BaseService;
 
 /**

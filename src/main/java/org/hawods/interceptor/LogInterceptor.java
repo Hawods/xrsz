@@ -28,11 +28,11 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
 
     private String[] ignoreParameters = DEFAULT_IGNORE_PARAMETERS;
 
-    @Resource(name = "logServiceImpl")
+    @Resource
     private LogService logService;
-    @Resource(name = "memberServiceImpl")
+    @Resource
     private MemberService memberService;
-    @Resource(name = "adminServiceImpl")
+    @Resource
     private AdminService adminService;
 
     @Override
@@ -43,7 +43,12 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
             for (LogConfig logConfig : logConfigs) {
                 if (antPathMatcher.match(logConfig.getUrlPattern(), path)) {
                     String operation = logConfig.getOperation();
-                    String operator = adminService.getCurrentUsername();
+                    String operator;
+                    if ("admin".equals(logConfig.getType())) {
+                        operator = adminService.getCurrentUsername();
+                    } else {
+                        operator = memberService.getCurrentUsername();
+                    }
                     String ip = request.getRemoteAddr();
                     StringBuilder parameter = new StringBuilder();
                     Map<String, String[]> parameterMap = request.getParameterMap();
@@ -61,6 +66,7 @@ public class LogInterceptor extends HandlerInterceptorAdapter {
                         }
                     }
                     Log log = new Log();
+                    log.setType(logConfig.getType());
                     log.setOperation(operation);
                     log.setOperator(operator);
                     log.setParameter(parameter.toString());
