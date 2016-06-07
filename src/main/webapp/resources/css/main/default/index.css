@@ -1,0 +1,15 @@
+@media(min-width:767px) {
+    .navbar {
+        background-color: transparent;
+        border-color: transparent;
+        padding: 20px 0;
+        -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+        transition: background .5s ease-in-out,padding .5s ease-in-out;
+    }
+    .navbar.top-nav-collapse {
+        background-color: #f8f8f8;
+        border-color: #e7e7e7;
+        padding: 0;
+    }
+}

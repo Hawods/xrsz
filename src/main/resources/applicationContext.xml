@@ -84,7 +84,9 @@
         <property name="useCodeAsDefaultMessage" value="true"/>
         <property name="basenames">
             <list>
-                <value>${message.path}</value>
+                <value>${message.common_path}</value>
+                <value>${message.main_path}</value>
+                <value>${message.admin_path}</value>
             </list>
         </property>
     </bean>

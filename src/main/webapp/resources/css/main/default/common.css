@@ -1,0 +1,8 @@
+.navbar-default .navbar-toggle {
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .open > a {
+    border-radius: 6px;
+}

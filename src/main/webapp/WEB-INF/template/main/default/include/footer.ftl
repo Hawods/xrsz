@@ -1,7 +1,7 @@
 [#escape x as x?html]
-<footer class="footer">
-    <div class="container">
-        <span>Place sticky footer content here.</span>
+<footer>
+    <div class="container text-center">
+        <p>Copyright &copy; 33go.cc 2014</p>
     </div>
 </footer>
 [/#escape]
